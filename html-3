@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RTV Microondas | Reparación de microondas cerca de ti</title>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#0b1f3a}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1120px;margin:auto;padding:0 18px}
+
+    header{
+      background:#052b63;
+      color:white;
+      position:sticky;
+      top:0;
+      z-index:50;
+      box-shadow:0 3px 12px rgba(0,0,0,.15)
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0
+    }
+    .logo img{height:42px}
+    .menu{display:flex;gap:22px;font-size:14px}
+    .menu a{color:white}
+    .btn-yellow{
+      background:#ffb000;
+      color:#061b36;
+      padding:12px 18px;
+      border-radius:8px;
+      font-weight:bold;
+      display:inline-block
+    }
+
+    .hero{
+      background:linear-gradient(90deg,#002b66 0%,#073d82 45%,#0b2345 100%);
+      color:white;
+      padding:55px 0 35px
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:center
+    }
+    .hero h1{
+      font-size:48px;
+      line-height:1;
+      margin:10px 0
+    }
+    .hero h1 span{color:#ffc83d}
+    .hero p{font-size:18px;margin-bottom:22px;max-width:480px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-whatsapp{
+      background:#20c767;
+      color:white;
+      padding:15px 20px;
+      border-radius:10px;
+      font-weight:bold;
+      display:inline-block
+    }
+    .btn-call{
+      background:white;
+      color:#063267;
+      padding:15px 20px;
+      border-radius:10px;
+      font-weight:bold;
+      display:inline-block
+    }
+    .hero-img{
+      width:100%;
+      border-radius:18px;
+      box-shadow:0 8px 24px rgba(0,0,0,.3)
+    }
+
+    .badges{
+      margin-top:-22px;
+      position:relative;
+      z-index:2
+    }
+    .badges-grid{
+      background:white;
+      border-radius:14px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      box-shadow:0 8px 22px rgba(0,0,0,.12);
+      overflow:hidden
+    }
+    .badge{
+      padding:18px;
+      text-align:center;
+      border-right:1px solid #e5e8ef;
+      font-weight:bold;
+      color:#123c72
+    }
+
+    section{padding:38px 0}
+    h2{text-align:center;font-size:28px;margin-bottom:24px;color:#073267}
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:14px
+    }
+    .card{
+      background:white;
+      border:1px solid #e1e6ef;
+      border-radius:12px;
+      padding:18px 10px;
+      text-align:center;
+      box-shadow:0 3px 10px rgba(0,0,0,.05)
+    }
+    .card img{height:42px;margin-bottom:10px}
+    .card p{font-weight:bold;font-size:13px}
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px
+    }
+    .step{
+      background:white;
+      border-radius:14px;
+      padding:18px;
+      text-align:center;
+      border:1px solid #e1e6ef
+    }
+    .step-number{
+      background:#ffb000;
+      color:#06254d;
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:bold;
+      margin-bottom:8px
+    }
+    .step img{height:42px;margin-bottom:8px}
+
+    .domicilio{
+      background:white;
+      border-radius:18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:center;
+      padding:24px;
+      box-shadow:0 6px 18px rgba(0,0,0,.1)
+    }
+    .domicilio img{width:100%;border-radius:14px}
+    .domicilio ul{margin:15px 0 20px 20px;line-height:1.8}
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:15px
+    }
+    .service{
+      background:white;
+      padding:18px;
+      border-radius:14px;
+      text-align:center;
+      border:1px solid #e1e6ef
+    }
+    .service img{height:45px;margin-bottom:10px}
+
+    .trust{
+      background:#052b63;
+      color:white;
+      border-radius:18px;
+      padding:25px;
+      display:grid;
+      grid-template-columns:1fr 2fr;
+      gap:25px
+    }
+    .trust ul{line-height:1.9;margin-left:18px}
+    .testimonials{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px
+    }
+    .testimonial{
+      background:white;
+      color:#0b1f3a;
+      border-radius:12px;
+      padding:12px
+    }
+    .testimonial img{
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-bottom:8px
+    }
+
+    .zones{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center
+    }
+    .zone{
+      background:white;
+      padding:10px 14px;
+      border-radius:25px;
+      border:1px solid #dce3ef;
+      font-weight:bold;
+      font-size:14px
+    }
+
+    .faq{
+      max-width:850px;
+      margin:auto
+    }
+    details{
+      background:white;
+      margin-bottom:10px;
+      padding:16px;
+      border-radius:10px;
+      border:1px solid #e1e6ef
+    }
+    summary{font-weight:bold;cursor:pointer}
+
+    .cta{
+      background:#052b63;
+      color:white;
+      border-radius:18px;
+      padding:28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px
+    }
+
+    footer{
+      background:#031b3f;
+      color:white;
+      text-align:center;
+      padding:18px;
+      font-size:14px
+    }
+
+    .float-wa{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      background:#20c767;
+      color:white;
+      padding:14px 18px;
+      border-radius:50px;
+      font-weight:bold;
+      box-shadow:0 6px 16px rgba(0,0,0,.25);
+      z-index:100
+    }
+
+    @media(max-width:900px){
+      .hero-grid,.domicilio,.trust{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .steps,.services,.testimonials,.badges-grid{grid-template-columns:1fr 1fr}
+      .menu{display:none}
+      .hero h1{font-size:36px}
+      .cta{flex-direction:column;text-align:center}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <img src="logo RTV microondas.png" alt="RTV Microondas">
+    </div>
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#funciona">¿Cómo funciona?</a>
+      <a href="#zonas">Zonas de atención</a>
+      <a href="#faq">Preguntas frecuentes</a>
+    </nav>
+    <a class="btn-yellow" href="https://wa.me/51999999999">Solicitar diagnóstico</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <strong>SERVICIO TÉCNICO ESPECIALIZADO</strong>
+      <h1>Reparación de microondas <span>cerca de ti</span></h1>
+      <p>Diagnóstico rápido, recojo a domicilio, reparación segura y garantía.</p>
+
+      <div class="hero-actions">
+        <a class="btn-whatsapp" href="https://wa.me/51999999999">Solicitar diagnóstico por WhatsApp</a>
+        <a class="btn-call" href="tel:01234567">Llamar ahora</a>
+      </div>
+    </div>
+
+    <div>
+      <img class="hero-img" src="foto de caro RTV.JPG" alt="Técnico RTV reparando microondas">
+    </div>
+  </div>
+</section>
+
+<div class="badges">
+  <div class="container badges-grid">
+    <div class="badge">Especialistas en microondas</div>
+    <div class="badge">Recojo a domicilio</div>
+    <div class="badge">Presupuesto antes de reparar</div>
+    <div class="badge">Garantía en reparaciones</div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <h2>Fallas que solucionamos</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="microondas inverter 2.png">
+        <p>No calienta</p>
+      </div>
+      <div class="card">
+        <img src="reparacion de panel.png">
+        <p>No enciende</p>
+      </div>
+      <div class="card">
+        <img src="fusibles y switches de puerta.png">
+        <p>Hace chispas</p>
+      </div>
+      <div class="card">
+        <img src="cambio de magnetrón.png">
+        <p>El plato no gira</p>
+      </div>
+      <div class="card">
+        <img src="reparacion de panel.png">
+        <p>Panel no responde</p>
+      </div>
+      <div class="card">
+        <img src="mantenimiento preventivo.png">
+        <p>Problemas inverter</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="funciona">
+  <div class="container">
+    <h2>¿Cómo funciona?</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <img src="escribenos por whatsapp.png">
+        <p>Escríbenos por WhatsApp</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <img src="envía foto o video.png">
+        <p>Envía foto o video</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <img src="agendar recojo.png">
+        <p>Coordinamos el recojo</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <img src="revisamos y cotizamos.png">
+        <p>Revisamos y cotizamos</p>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <img src="mantenimiento preventivo.png">
+        <p>Reparamos y entregamos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container domicilio">
+    <div>
+      <h2 style="text-align:left">Servicio a domicilio</h2>
+      <p>Recojo y entrega en tu casa u oficina. Ahorra tiempo y evita traslados.</p>
+      <ul>
+        <li>Recojo y entrega seguros</li>
+        <li>Técnicos especializados</li>
+        <li>Ideal para hogares y oficinas</li>
+      </ul>
+      <a class="btn-yellow" href="https://wa.me/51999999999">Agendar recojo</a>
+    </div>
+    <img src="foto de caro RTV.JPG" alt="Servicio a domicilio RTV">
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <h2>Servicios principales</h2>
+    <div class="services">
+      <div class="service">
+        <img src="cambio de magnetrón.png">
+        <h3>Cambio de magnetrón</h3>
+      </div>
+      <div class="service">
+        <img src="reparacion de panel.png">
+        <h3>Reparación de panel</h3>
+      </div>
+      <div class="service">
+        <img src="microondas inverter 2.png">
+        <h3>Microondas inverter</h3>
+      </div>
+      <div class="service">
+        <img src="fusibles y switches de puerta.png">
+        <h3>Fusibles y switches</h3>
+      </div>
+      <div class="service">
+        <img src="mantenimiento preventivo.png">
+        <h3>Mantenimiento preventivo</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container trust">
+    <div>
+      <h2 style="text-align:left;color:white">Confianza y transparencia</h2>
+      <ul>
+        <li>Diagnóstico documentado</li>
+        <li>Fotos del proceso de reparación</li>
+        <li>Seguimiento por WhatsApp</li>
+        <li>Garantía en todas nuestras reparaciones</li>
+      </ul>
+      <br>
+      <a class="btn-yellow" href="https://wa.me/51999999999">Ver mis testimonios</a>
+    </div>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        <img src="foto de caro RTV.JPG">
+        <p>“Mi microondas volvió a calentar perfecto. Rápidos y profesionales.”</p>
+      </div>
+      <div class="testimonial">
+        <img src="foto de caro RTV.JPG">
+        <p>“Excelente atención, me enviaron el diagnóstico con fotos.”</p>
+      </div>
+      <div class="testimonial">
+        <img src="foto de caro RTV.JPG">
+        <p>“Recojo y entrega puntual. Totalmente recomendado.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zonas">
+  <div class="container">
+    <h2>Zonas de atención en Lima</h2>
+    <div class="zones">
+      <div class="zone">Surco</div>
+      <div class="zone">Miraflores</div>
+      <div class="zone">San Isidro</div>
+      <div class="zone">San Borja</div>
+      <div class="zone">Magdalena</div>
+      <div class="zone">San Miguel</div>
+      <div class="zone">Jesús María</div>
+      <div class="zone">Pueblo Libre</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container faq">
+    <h2>Preguntas frecuentes</h2>
+
+    <details>
+      <summary>¿Cuánto cuesta el diagnóstico?</summary>
+      <p>El costo depende de la zona y del tipo de evaluación. Escríbenos por WhatsApp para confirmarlo.</p>
+    </details>
+
+    <details>
+      <summary>¿Cuánto tiempo toma la reparación?</summary>
+      <p>Depende de la falla y disponibilidad de repuestos. Primero revisamos y luego te damos el presupuesto.</p>
+    </details>
+
+    <details>
+      <summary>¿Hacen recojo y entrega a domicilio?</summary>
+      <p>Sí, coordinamos recojo y entrega en zonas seleccionadas de Lima.</p>
+    </details>
+
+    <details>
+      <summary>¿Reparan microondas de todas las marcas?</summary>
+      <p>Sí, revisamos diferentes marcas y modelos, incluyendo microondas inverter.</p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="container cta">
+    <div>
+      <h2 style="text-align:left;color:white;margin-bottom:8px">¿Tu microondas falló? Escríbenos ahora.</h2>
+      <p>Atención rápida por WhatsApp.</p>
+    </div>
+    <a class="btn-yellow" href="https://wa.me/51999999999">Solicitar diagnóstico</a>
+  </div>
+</section>
+
+<footer>
+  <p>RTV Microondas © 2026 | Servicio técnico especializado | Lima Metropolitana</p>
+</footer>
+
+<a class="float-wa" href="https://wa.me/51999999999">WhatsApp</a>
+
+</body>
+</html>
